@@ -1,8 +1,10 @@
 <div align="center">
 <h2> Please Enter A Title For Your Board </h2>
 
+<div class="col-md-4 col-md-offset-4">
 <%= bootstrap_form_for(@board) do |f| %>
   <%= f.text_field :title %>
   <%= f.submit "Create Board" %>
 <% end %>
+</div>
 </div>
