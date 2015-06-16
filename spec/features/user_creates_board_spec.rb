@@ -12,6 +12,6 @@ RSpec.feature "a board" do
     visit new_board_path
     fill_in "board[title]", with: "Pivotal-Slacker"
     click_link_or_button("Create Board")
-    expect(page).to have_content("Your Board: Pivotal-Slacker")
+    expect(page).to have_content("Pivotal-Slacker")
   end
 end
