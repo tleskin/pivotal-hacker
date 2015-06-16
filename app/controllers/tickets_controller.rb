@@ -5,6 +5,7 @@ class TicketsController < ApplicationController
 
   def create
     ticket = Ticket.new(ticket_params)
+    ticket.board = Board.last
     if ticket.save
       redirect_to board_path(ticket.board)
     else
@@ -16,6 +17,6 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:title, :description)
+    params.require(:ticket).permit(:title, :description, :status)
   end
 end
