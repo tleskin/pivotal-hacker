@@ -1,4 +1,7 @@
-<h1 align="center">"Your Board:"<%= @board.title %> </h1>
+<h2 align="center">"Your Board:"<%= @board.title %> </h2>
+
+<div align="center"><%= link_to "Create a New Ticket", new_ticket_path, class: "btn btn-success" %></div>
+
 
 <div class="row" align="center">
   <br><br><br>
@@ -13,10 +16,12 @@
           </tr>
         </thead>
       <tbody>
+        <% backlog_tickets.each do |ticket| %>
           <tr>
-            <td class="text-center">title</td>
-            <td class="text-center">desc</td>
+            <td class="text-center"><%= ticket.title %></td>
+            <td class="text-center"><%= ticket.description %></td>
           </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
@@ -30,10 +35,12 @@
           </tr>
         </thead>
       <tbody>
+        <% sprint_tickets.each do |ticket| %>
           <tr>
-            <td class="text-center">title</td>
-            <td class="text-center">desc</td>
+            <td class="text-center"><%= ticket.title %></td>
+            <td class="text-center"><%= ticket.description %></td>
           </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
@@ -47,10 +54,12 @@
           </tr>
         </thead>
       <tbody>
+        <% in_progress_tickets.each do |ticket| %>
           <tr>
-            <td class="text-center">title</td>
-            <td class="text-center">desc</td>
+            <td class="text-center"><%= ticket.title %></td>
+            <td class="text-center"><%= ticket.description %></td>
           </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
@@ -64,10 +73,12 @@
           </tr>
         </thead>
       <tbody>
+        <% done_tickets.each do |ticket| %>
           <tr>
-            <td class="text-center">title</td>
-            <td class="text-center">desc</td>
+            <td class="text-center"><%= ticket.title %></td>
+            <td class="text-center"><%= ticket.description %></td>
           </tr>
+        <% end %>
       </tbody>
     </table>
   </div>

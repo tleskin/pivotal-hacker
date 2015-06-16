@@ -5,5 +5,4 @@ RSpec.describe Board, type: :model do
     board = Board.create(title: nil)
     expect(board).to_not be_valid
   end
-
 end
